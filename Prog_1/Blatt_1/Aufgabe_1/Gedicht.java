@@ -1,5 +1,3 @@
-package Blatt_1;
-
 public class Gedicht{
     public static void main(String[] args) {
         System.out.println("Rosen sind rot,");

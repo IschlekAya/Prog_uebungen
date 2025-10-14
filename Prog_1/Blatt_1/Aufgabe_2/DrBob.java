@@ -1,6 +1,3 @@
-package Blatt_1;
-
-public class DrBob {
     class Vector2D{
         int x;
         int y;
@@ -36,7 +33,6 @@ public class DrBob {
     }
 
     class Zeichenflaeche{
-        float xLaenge;
-        float yLaenge;//das ist die y laenge
+        int xLaenge;
+        int yLaenge;//das ist die y laenge
     }
-}
