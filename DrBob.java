@@ -37,6 +37,6 @@ public class DrBob {
 
     class Zeichenflaeche{
         float xLaenge;
-        float yLaenge;
+        float yLaenge;//das ist die y laenge
     }
 }
