@@ -24,6 +24,8 @@ String film;
 String musik;
 }
 class Birthdate{
-float date;//unix time
+int tag;
+int monat;
+int jahr;
 }
 
