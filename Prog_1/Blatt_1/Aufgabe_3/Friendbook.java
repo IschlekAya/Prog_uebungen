@@ -14,6 +14,7 @@ class Author{
 String name;
 Birthdate datum;
 AuthorPreferences prefs;
+String gender;
 }
 class AuthorPreferences{
 String buch;
