@@ -1,7 +1,7 @@
 Name        HEX                                     Benutzung
 mp3         49 44 33                                Comprimierte Audiodateien
-wav         52 49 46 46 ?? ?? ?? ?? 57 41 56 45     Uncomprimierte Audiodatei
-ico         00 00 01 00	                            bild encodet inm ICO format
+wav         52 49 46 46 ?? ?? ?? ?? 57 41 56 45     Waveform Audio File Format
+avi         52 49 46 46 ?? ?? ?? ?? 41 56 49 20	    Audio Video Interleave video format
 class       CA FE BA BE	                            Compelierte Java classe
 txt         EF BB BF	                            UTF-8 byte codierter text
 txt         FF FE	                                UTF-16LE codierter byte text
