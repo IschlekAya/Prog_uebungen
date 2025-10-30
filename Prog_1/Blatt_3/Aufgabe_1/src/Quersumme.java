@@ -8,7 +8,7 @@ public class Quersumme {
         return sum;
     }
 
-    public static int recQuersumme(int x) {
+    public static int recQuersumme(int x) {     //recursive lösung für aufg 1, ist von den ergebnmissen equivalent
         if (x != 0) {
             return x % 10 + recQuersumme((x - (x % 10)) / 10);
         } else {
