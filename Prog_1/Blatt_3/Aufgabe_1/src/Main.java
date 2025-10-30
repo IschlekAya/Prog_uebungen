@@ -7,5 +7,6 @@ public class Main {
         System.out.println("give me an interger you fleshbag!");
         int i = input.nextInt();
         System.out.println("Zhe quersumme is "+Quersumme.quersumme(i));
+        System.out.println("and Zhis is zhe recursive quersumme "+Quersumme.recQuersumme(i) );
     }
 }
