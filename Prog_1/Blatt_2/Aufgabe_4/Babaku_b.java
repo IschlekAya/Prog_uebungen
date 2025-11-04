@@ -4,7 +4,7 @@ class Grill{
 	int d;			//diameter
 	double radius;
 	double area;
-	double areaCalcOne;
+	//double areaCalcOne;
 
 	Grill(int d0){
 		d = d0;
