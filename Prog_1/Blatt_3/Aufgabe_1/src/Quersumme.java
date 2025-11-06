@@ -15,4 +15,12 @@ public class Quersumme {
             return x;
         }
     }
+    public static int quersumme(int x,int zahlsystem) {
+        int sum = 0;
+        while (x != 0) {         //wiederholt biss alle 1-ner stellen addiert wurden
+            sum += x % zahlsystem;          //modulo von zahlsystem ist die 1-ner stelle
+            x = (x - (x % zahlsystem)) / zahlsystem;    //x ohne einzerstellelen wird durch zahlsystem geteilt
+        }
+        return sum;
+    }
 }
