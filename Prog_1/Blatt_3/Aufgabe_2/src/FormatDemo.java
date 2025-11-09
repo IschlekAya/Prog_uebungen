@@ -24,7 +24,7 @@ public class FormatDemo{
         System.out.printf("Double %f: \n", d);
         System.out.printf("%25.2f\n", d);
         System.out.printf("%25E\n", d);
-        String hex = String.format("%25A", d).replace("P", "E").replace("X", "x");
+        String hex = String.format("%25A", d).replace("X", "x");
         System.out.println(hex);
     }
 }
