@@ -10,12 +10,14 @@ public class Card {
         this.rank = rank;
     }
 
+    // create a card with random attributes
     static Card random(){
         Suit suit = Suit.fromInt(randomGenerator.nextInt(4) + 1);
         Rank rank = Rank.fromInt(randomGenerator.nextInt(13) + 1);
         return new Card(suit, rank);
     }
 
+    // create a list of i random cards
     static Card[] getCards(int i){
         Card[] cardList = new Card[i];
         for (int j = 0; j < i; j++){
@@ -24,6 +26,7 @@ public class Card {
         return cardList;
     }
 
+    // return the name of a card
     String name(){
         String name = "";
         switch(this.suit){

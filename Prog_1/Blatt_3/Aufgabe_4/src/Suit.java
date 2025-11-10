@@ -4,6 +4,7 @@ public enum Suit {
     HEARTS,  // Herz
     DIAMONDS; // Karo
 
+    // assign a suit based of an integer
     static Suit fromInt(int suitNr){
         switch (suitNr) {
             case 1: return CLUBS;
@@ -11,6 +12,6 @@ public enum Suit {
             case 3: return HEARTS;
             case 4: return DIAMONDS;
         }
-        return null;
+        return null;    // invalid integer
     }
 }

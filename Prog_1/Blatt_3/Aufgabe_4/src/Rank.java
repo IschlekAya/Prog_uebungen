@@ -13,6 +13,7 @@ public enum Rank {
     KING,   // König
     ACE;     // Ass
 
+    // assign a rank based of an integer
     static Rank fromInt(int rankNr){
         switch(rankNr){
             case 1: return ACE;
@@ -29,6 +30,6 @@ public enum Rank {
             case 12: return QUEEN;
             case 13: return KING;
         }
-        return null;
+        return null;    // invalid integer
     }
 }
