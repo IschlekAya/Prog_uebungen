@@ -13,7 +13,7 @@ public class FormatDemo{
         System.out.format("%+d\n", x);
         System.out.printf("%H\n", x);
         String binary = String.format("%32s", Integer.toBinaryString(x)).replace(" ", "0");
-        System.out.printf("0x%s\n", binary);
+        System.out.printf("0b%s\n", binary);
         System.out.printf("[%-5d%5d]\n", x, x);
 
         System.out.println();
