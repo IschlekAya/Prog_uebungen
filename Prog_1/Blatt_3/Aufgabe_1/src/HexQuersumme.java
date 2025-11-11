@@ -34,7 +34,10 @@ public class HexQuersumme {
         // calculates the decimal value of the digit sum of x
         for (int i = 0; i < x.length(); i++){
             for (int j = 0; j < 16; j++){
-                if (x.charAt(i) == hexValue[j]) decimalDigitSum += j;
+                if (x.charAt(i) == hexValue[j]) {
+                    decimalDigitSum += j;
+                    continue;
+                }
             }
         }
 
