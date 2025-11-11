@@ -8,8 +8,8 @@ public class Main {
         System.out.print("Enter a hexadecimal number: ");
         String hexadecimalNum = sc.next();
 
-        int decimalDigitSum = HexQuersumme.getDigitSum(decimalNum);
-        String hexDigitSum = HexQuersumme.getHexDigitSum(hexadecimalNum);
+        int decimalDigitSum = Quersumme.getDigitSum(decimalNum);
+        String hexDigitSum = Quersumme.getHexDigitSum(hexadecimalNum);
         System.out.println("Digit sum of the decimal number: "+ decimalDigitSum +
                 "\nDigit sum of the hexadecimal number: " + hexDigitSum);
         sc.close();

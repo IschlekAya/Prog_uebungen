@@ -1,4 +1,4 @@
-public class HexQuersumme {
+public class Quersumme {
     static final char[] hexValue = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}; // index = hexadecimal value
 
     // returns digit sum of a decimal integer
