@@ -12,5 +12,6 @@ public class Main {
         String hexDigitSum = HexQuersumme.getHexDigitSum(hexadecimalNum);
         System.out.println("Digit sum of the decimal number: "+ decimalDigitSum +
                 "\nDigit sum of the hexadecimal number: " + hexDigitSum);
+        sc.close();
     }
 }
