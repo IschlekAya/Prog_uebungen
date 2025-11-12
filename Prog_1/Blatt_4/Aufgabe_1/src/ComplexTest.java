@@ -4,7 +4,7 @@ public class ComplexTest {
         Complex otherComplex = new Complex (-6.0, 8.0);
         Complex emptyComplex = new Complex();
         Complex expectedComplex;            // Variable for the expected result of a calculation, refer to the .pdf file containing the results
-        Complex result;                     // Variable for the programs result of a calculation
+        Complex result;                     // Variable for the program's result of a calculation
 
         /*
 
