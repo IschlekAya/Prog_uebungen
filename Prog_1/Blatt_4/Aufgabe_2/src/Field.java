@@ -27,11 +27,14 @@ public class Field {
     }
 
     public void printField() {
-        System.out.printf("%c|%c|%c\n" +
-                        "-+-+-\n" +
-                        "%c|%c|%c\n" +
-                        "-+-+-\n" +
-                        "%c|%c|%c\n",
+        System.out.printf(
+                        " 0 1 2 x\n" +
+                        "0%c|%c|%c\n" +
+                        " -+-+-\n" +
+                        "1%c|%c|%c\n" +
+                        " -+-+-\n" +
+                        "2%c|%c|%c\n"+
+                "y\n",
                 field[0][0], field[1][0], field[2][0],
                 field[0][1], field[1][1], field[2][1],
                 field[0][2], field[1][2], field[2][2]);
