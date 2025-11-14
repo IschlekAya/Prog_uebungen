@@ -28,7 +28,7 @@ public class ComplexTest {
         expectedComplex = new Complex(9.0, -12.0);
         result.comparison(expectedComplex);
 
-        System.out.print("Multiplication of (" + testComplex + ") and (" + otherComplex + "): ");
+        System.out.print("Multiplication of (" + testComplex + ") with (" + otherComplex + "): ");
         result = testComplex.mul(otherComplex);
         expectedComplex = new Complex(14.0, 48.0);
         result.comparison(expectedComplex);
@@ -36,6 +36,13 @@ public class ComplexTest {
         System.out.print("Division of (" + testComplex + ") by (" + otherComplex + "): ");
         result = testComplex.div(otherComplex);
         expectedComplex = new Complex(-0.5, 0.0);
+        result.comparison(expectedComplex);
+
+        // calculating imaginary², should equal -1
+        testComplex = new Complex(0.0, 1.0);
+        System.out.print("Multiplikation of (" + testComplex + ") with (" + testComplex + "): ");
+        result = testComplex.mul(testComplex);
+        expectedComplex = new Complex(-1.0, 0.0);
         result.comparison(expectedComplex);
 
     }

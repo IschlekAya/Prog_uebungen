@@ -57,8 +57,7 @@ public class Complex {
     // checks if two complex numbers are equal
     public boolean equals(Complex other){
         if (Math.abs(this.real - other.real) >= 1e-12) return false;
-        if (Math.abs(this.imaginary - other.imaginary) >= 1e-12) return false;
-        return true;
+        return !(Math.abs(this.imaginary - other.imaginary) >= 1e-12);
     }
 
     // prints values of a complex
