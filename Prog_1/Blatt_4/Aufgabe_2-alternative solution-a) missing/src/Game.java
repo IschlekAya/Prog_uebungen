@@ -28,19 +28,21 @@ public class Game {
 
     // print the current state of the board
     private void print(){
-        for (Field[] fieldArray : board){
-            System.out.println("+---".repeat(3) + "+");
+        // go through row 0-2
+        for (int row = 0; row < 3; row++){
+            System.out.println("+-----".repeat(3) + "+");
 
-            for (Field field : fieldArray){
+            // print current row
+            for (int column = 0; column < 3; column++){
                 String string = "";
-                switch (field){
-                    case RED: string += "X"; break;
-                    case YELLOW: string += "O"; break;
+                switch (board[row][column]){
+                    case CROSS: string += "X"; break;
+                    case CIRLCE: string += "O"; break;
                     case EMPTY: string += " "; break;
                     default: string += "?"; break;
                 }
 
-                System.out.printf("| %s ", string);
+                System.out.printf("|%d %s %d",column, string, row);
             }
             System.out.println("|");
 
@@ -55,7 +57,7 @@ public class Game {
         int column = scanner.nextInt();
         // choose another field if selected column is out of range
         if (column < 0 || column > 2){
-            System.out.println("Invalid Selection!\nPlease choose a column between 0 and 2\n");
+            System.out.println("Invalid Selection!\nPlease choose a column between integer 0 and 2\n");
             return place(p);
         }
 
@@ -63,7 +65,7 @@ public class Game {
         int row = scanner.nextInt();
         // choose another row if selected row is out of range
         if (row < 0 || row > 2){
-            System.out.println("Invalid Selection!\nPlease choose a row between 0 and 2\n");
+            System.out.println("Invalid Selection!\nPlease choose a row between integer 0 and 2\n");
             return place(p);
         }
 
@@ -138,13 +140,13 @@ public class Game {
 
     static void run(){
         Game board = new Game();
-        Player p = Player.YELLOW;   // Player RED starts the game
+        Player p = Player.CIRCLE;   // Player CROSS starts the game
         board.print();
         boolean winnerExists = false;
         boolean noMoreMoves = false;
 
         do{
-            p = (p == Player.RED? Player.YELLOW: Player.RED);   // switch player after each turn
+            p = (p == Player.CROSS ? Player.CIRCLE : Player.CROSS);   // switch player after each turn
             board.place(p);
             board.print();
             winnerExists = board.hasWon(p);

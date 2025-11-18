@@ -1,13 +1,13 @@
 // Properties a Field on the Board can have
 public enum Field {
-    RED,
-    YELLOW,
+    CROSS,
+    CIRLCE,
     EMPTY;
 
     public static Field toField(Player p){
         switch (p){
-            case RED: return RED;
-            case YELLOW: return YELLOW;
+            case CROSS: return CROSS;
+            case CIRCLE: return CIRLCE;
             default: return null;
         }
     }

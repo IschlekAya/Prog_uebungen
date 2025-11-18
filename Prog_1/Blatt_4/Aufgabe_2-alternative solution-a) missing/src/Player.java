@@ -1,4 +1,4 @@
 public enum Player {
-    RED,
-    YELLOW
+    CROSS,
+    CIRCLE
 }
