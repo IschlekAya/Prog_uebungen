@@ -47,7 +47,7 @@ public class Game {
             System.out.println("|");
 
         }
-        System.out.println("+---".repeat(3) + "+");
+        System.out.println("+-----".repeat(3) + "+");
 
     }
 
