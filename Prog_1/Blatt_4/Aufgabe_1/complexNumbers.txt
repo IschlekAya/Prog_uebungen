@@ -1,0 +1,44 @@
+Multiplikation:
+(a+bi)*(c+di)
+a*(c+di) + bi*(c+di)
+ac + adi + bic + bdii -> i is positive (= 1), ii is negative (= -1) (imaginary technique - maths) -> bdii equals -bd
+ac-bd + adi + bci
+(ac-bd) + (ad + bc)i
+
+Division:
+note: 1/i = -i, because 1i/ii = i/ii = i/-1 = -i
+(a+bi)/(c+di)	multiply by z2*, which here would be (c-di)
+((a+bi)*(c-di)) 	/	((c+di)*(c-di))
+(a(c-di) + bi(c-di)	/	(cc -cdi +cdi (-ddii))
+(ac-adi + bci - bdii)	/	(cc(-dd))	-> -dd = -d² = +dd, -bdii -> -bd*-1 -> bd
+(ac + bd + bci - adi)	/	(cc + dd)
+(ac + bd)/(cc + dd) + (bci-adi)/(cc + dd)
+(ac + bd)/(cc + dd) + ((bc - ad)/(cc + dd)) * i	-> solution from class
+
+
+Addition:
+a+bi+c+di
+a+c+(b+d)i
+
+Subtraction:
+a+bi-(c+di)
+a+bi-c-di
+a-c+(b-d)i
+
+Source: https://betterexplained.com/articles/intuitive-arithmetic-with-complex-numbers/
+
+
+Nr.1 b) Test:
+(a+bi)*(c+di)
+a*(c+di) + bi*(c+di)
+ac + adi + bic + bdii	-> ii = -1
+ac-bd + adi + bci
+(ac-bd) + (ad + bc)i
+-> real number = ac-bd
+-> imaginary number = ad + bc
+
+(a+bi)*(c+di)
+a*(c+di) + bi*(c+di)
+ac + adi + bic + bdii	-> ii = who knows?
+-> real number = ac
+-> imaginary number = ad + bc + bdi -> need a value for i to calculate imaginary
