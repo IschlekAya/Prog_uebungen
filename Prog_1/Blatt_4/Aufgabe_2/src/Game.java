@@ -19,13 +19,6 @@ public class Game {
 
     }
 
-    // returns true if answer to another round is "y"
-    static boolean anotherRound(){
-        System.out.print("Would you like to play another game y/n: ");
-        String answer = scanner.next().toLowerCase();
-        return (answer.equals("y"));
-    }
-
     // print the current state of the board
     private void print(){
         // go through row 0-2
@@ -160,7 +153,6 @@ public class Game {
             System.out.println("The game has ended in a draw.\n");
         }
 
-        if (anotherRound()) run();  // play again
         scanner.close();
     }
 
