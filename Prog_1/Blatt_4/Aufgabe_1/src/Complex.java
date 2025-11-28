@@ -75,16 +75,4 @@ public class Complex {
         }
         System.out.println("FAILED: expected (" + expectedComplex + "), got (" + this + ")\n");
     }
-
-    /*
-    // compares given complex to complex expectedValue
-    void comparison(Complex expectedValue){
-        System.out.println("Calculated real number = " + this.real);
-        System.out.println("Calculated imaginary number = " + this.imaginary);
-        System.out.println("Expected real number = " + expectedValue.real);
-        System.out.println("Expected imaginary number = " + expectedValue.imaginary);
-        System.out.println("Calculated complex number equals expected complex number: " + this.equals(expectedValue) + "\n");
-    }
-
-     */
 }
