@@ -1,0 +1,9 @@
+private class ListCell -> class soll nur von IntList verwendet werden, andere Dateien brauchen keinen Zugriff darauf
+
+public class Iterator -> class soll von außen verwendet werden können, um z.B. die aktuelle Position in der Liste zu verändern
+	private ListCell cursor -> soll nur durch Methoden von außen verändert werden können, kein direkter Zugriff nötig
+	private Konstruktor -> Konstruktor soll durch Methoden wie iterator(s. class IntList) erstellt werden, kein direkter Zugriff von außen nötig
+	public Methoden wie hasNext() & next() werden zur Verwendung des Iterator benötigt, sind also demzufolge public
+
+private ListCell head -> soll nur durch Methoden wie addFirst() verändert werden können, darum kein direkter Zugriff gestattet
+public Konstruktor, iterator(), addFirst(), etc. sollen von außen verwendet werden können, um die Liste zu bearbeiten (oder sich einen Überblick zu verschaffen s. iterator(), size(), etc.), ohne direkt manuell die Variablen der Klasse zu bearbeiten

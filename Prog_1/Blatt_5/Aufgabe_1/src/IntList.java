@@ -11,9 +11,9 @@ class IntList {
     }
 
     public class Iterator{
-        ListCell cursor;
+        private ListCell cursor;
 
-        public Iterator(){this.cursor = head;}
+        private Iterator(){this.cursor = head;}
 
         // returns true if there is another ListCell after the cursor Cell
         public boolean hasNext(){return cursor != null && cursor.next != null;} // avoid exception where cursor == null}
@@ -26,7 +26,7 @@ class IntList {
         }
     }
 
-    public ListCell head;
+    private ListCell head;
 
     public IntList(){
         head = null;
@@ -150,7 +150,7 @@ class IntList {
         return (head == null);
     }
 
-    @Override   // toString existert in einer Oberklasse? Es gibt eine Oberklasse??
+    @Override   // overwrites toString() of superclass Object
     public String toString(){
         // return empty list
         if (isEmpty()) return "[]";
