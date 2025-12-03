@@ -19,17 +19,19 @@ class IntList {
         public boolean hasNext(){return cursor != null && cursor.next != null;} // avoid exception where cursor == null}
 
         // returns current ListCell and moves cursor to the next
-        public Integer next(){      //TODO resolve error
-            int oldContent = cursor.content;
-            cursor = cursor.next;
-            return oldContent;
+	public Integer next(){       
+		int oldContent = cursor.content;
+        	cursor = cursor.next;
+        	return oldContent;
         }
     }
 
     private ListCell head;
+    private int size;
 
     public IntList(){
         head = null;
+        size = 0;
     }
 
     // create new Iterator
@@ -38,6 +40,7 @@ class IntList {
     // add another ListCell at the start of the list
     public void addFirst(int x){
         head = new ListCell(x, head);
+        size++;
     }
 
     // get content of the first cell
@@ -52,6 +55,7 @@ class IntList {
         // false if there's nothing to remove
         if (head == null) return false;
         head = head.next;
+        size--;
         return true;
     }
 
@@ -69,6 +73,7 @@ class IntList {
             currentCell = currentCell.next;
         }
         currentCell.next = new ListCell(x, null);
+        size++;
     }
 
     // get content of the last cell
@@ -97,17 +102,17 @@ class IntList {
                 currentCell = currentCell.next;
             }
             currentCell.next = null; // delete reference to the last cell
+            size--;
         }
         return true;
     }
 
     // remove all ListCells with content x
     public void remove(int x){
-        // break if list is empty
-        if (isEmpty()) return;
         // delete every Cell with x until the list is empty or up to the first one that doesn't contain x
         while (head != null && head.content == x){
             head = head.next;
+            size--;
         }
         ListCell currentCell = head;    // currentCell is either null and the list is empty, or currentCell doesn't contain x
         // go through every Cell
@@ -115,6 +120,7 @@ class IntList {
             // while there exists another Cell and said Cell contains x, delete that Cell
             while (currentCell.next != null && currentCell.next.content == x){
                 currentCell.next = currentCell.next.next;
+                size--;
             }
             currentCell = currentCell.next;
         }
@@ -132,18 +138,7 @@ class IntList {
     }
 
     // get size of the list
-    public int size(){
-        ListCell currentCell = head;
-        int cellCounter = 0;
-        // list is empty
-        if (isEmpty()) return 0;
-        // go through every Cell in the list
-        while (currentCell != null){
-            currentCell = currentCell.next;
-            cellCounter++;
-        }
-        return cellCounter;
-    }
+    public int size(){return size;}
 
     // check if a list is empty
     public boolean isEmpty(){
