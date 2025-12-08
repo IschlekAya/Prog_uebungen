@@ -1,0 +1,9 @@
+Wieso sind manche methoden dieser Klasse als abstrakte Methoden deklariert, andere hingegen nicht?
+	byteValue() und shortValue() verwenden die abstrakte Methode intValue(), werden also durch die Implementation
+	von intValue() indirekt mitimplementiert.
+	Die anderen Methoden sind abstrakt, da sie Typspezifisch implementiert werden sollen (float rundet bei 
+	toInt(), short muss dies nicht).
+Geben sie einen Grund an, warum das Vorhandensein der Superklasse Number generell sinnvoll sein könnte.
+	Sicherstellen der grundlegenden Methoden (toInt(), toFloat(), etc.) die jede Zahl(enklasse) besitzen soll.
+	Speichern von Zahlen verschiedener (dynamischer) Grundtypen (int, double, byte) in einem gemeinsamen 
+	(statischen) Datentyp.

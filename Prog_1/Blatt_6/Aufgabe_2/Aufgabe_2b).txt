@@ -1,0 +1,26 @@
+Welche statischen Attribute besitzt diese Klasse?
+	static int BYTES
+	static int MAX_VALUE
+	static int MIN_VALUE
+	static int SIZE
+	static Class<Integer>
+
+bitCount(int i)
+	returns the number of one-bits in the two's complement binary representation of the specified 
+	int value (1110 would be 3)
+	Usecase: 
+
+rotateLeft(int i, int distance)
+	returns the resulting int value when rotating the specified int value lef by {distance} amount of bits
+	(overflowing bits DO NOT get shifted to the lower-value bits, those get filled up with zeros instead)
+	Usecase: Multiplying by multiples of two with minimal use of ressources, danger: intOverflow
+
+numberOfTrailingZeros(int i)
+	returns the number of zero bits following the lowest-order one-bit in the two's complement binary 
+	representation of the specified int value
+	Usecase: Find the order of the smallest bit (= two to the power of the returned value)
+
+reverse(int i)
+	returns the resulting int value when reversing the order of the bytes in the two's complement binary 
+	representation
+	Usecase: ... finding palindromes?...
