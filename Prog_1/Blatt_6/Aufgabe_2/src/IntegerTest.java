@@ -33,6 +33,7 @@ public class IntegerTest {
         printRotateLeft(100);
         printRotateLeft(-100);
         printTrailingZeros(100);
+	printTrailingZeros(100);
         printReverse(100);
         printReverse(-100);
     }
