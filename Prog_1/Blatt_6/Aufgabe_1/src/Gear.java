@@ -7,6 +7,9 @@ abstract public class Gear {
 
     public String getBrand(){return brand;}
 
+    @Override
+    public String toString(){return getGermanName() + " der Marke " + getBrand();}
+
     abstract public String getName();
 
     abstract public String getGermanName();

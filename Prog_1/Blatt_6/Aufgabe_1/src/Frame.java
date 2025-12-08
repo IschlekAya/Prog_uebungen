@@ -27,6 +27,9 @@ abstract class Frame {
 
     }
 
+    @Override
+    public String toString(){return colorToGerman() + " " + getGermanName() + " von der Marke " + getBrand();}
+
     abstract public String getName();
 
     abstract public String getGermanName();

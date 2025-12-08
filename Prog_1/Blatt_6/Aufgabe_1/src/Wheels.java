@@ -9,6 +9,9 @@ public class Wheels {
         brand = brand0;
     }
 
+    @Override
+    public String toString(){return "Rad mit Radius " + getRadius() + ", dem Durchmesser " + getWidth() + " und der Marke " + getBrand();}
+
     public String getBrand(){return brand;}
     public float getRadius(){return radius;}
     public float getWidth(){return width;}
