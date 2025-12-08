@@ -22,8 +22,9 @@ abstract public class Bike {
     // return bike subclass's name
     abstract public String getType();
 
-    // return bike subclass'S name in german
+    // return bike subclass's name in german
     abstract public String getGermanType();
+
 
     // return String of the wanted bike subclass
     private static String askBikeType(){
@@ -232,15 +233,22 @@ abstract public class Bike {
         return name;
     }
 
+    // sets the name of the Bike object
+    public void setName(String name0){this.name = name0;}
+
     @Override
     // returns String describing the provided Bike object
     public String toString(){
         String bike = frame.colorToGerman() + " ";
         if (electric) bike += "E-";
-        bike += getGermanType() + " mit ";
-        bike += frame.getGermanName() + ", ";
-        bike += brake.getGermanName() + " und ";
-        bike += gear.getGermanName();
+        bike += this.getGermanType() + " mit dem Namen ";
+        bike += this.getName() + ", mit ";
+        bike += frame.getGermanName() + " der Marke ";
+        bike += frame.getBrand() + ", ";
+        bike += brake.getGermanName() + " der Marke ";
+        bike += brake.getBrand() + " und ";
+        bike += gear.getGermanName() + " der Marke ";
+        bike += gear.getBrand();
 
         return bike;
     }
@@ -255,7 +263,7 @@ abstract public class Bike {
         System.out.println("Gear: " + gear.getName() + ", brand: " + gear.getBrand());
         System.out.printf("Wheels: Radius = %fcm, Width = %fmm, brand = %s\n", wheels.getRadius(), wheels.getWidth(), wheels.getBrand());
         System.out.println("Electric: " + this.electric);
-        System.out.println("-".repeat(75));
+        System.out.println("-".repeat(75) + "\n");
     }
 
 }
