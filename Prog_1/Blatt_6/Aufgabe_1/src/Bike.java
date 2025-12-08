@@ -6,7 +6,6 @@ abstract public class Bike {
     private Brake brake;
     private Gear gear;
     private Wheels wheels;
-    private String color;
     private boolean electric;
     private String name;
 
