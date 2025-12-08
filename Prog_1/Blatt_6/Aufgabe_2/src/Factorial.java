@@ -13,5 +13,6 @@ public class Factorial {
         }
         System.out.println("The factorial of " + n +
                 " is:\n" + factorial);
+	scanner.close();
     }
 }
