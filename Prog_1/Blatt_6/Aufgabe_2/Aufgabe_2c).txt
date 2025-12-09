@@ -2,7 +2,7 @@ Welche Zahlenwerte lassen sich mittels dieser beiden Klassen repräsentieren?
 	Ganze Zahlen in der Range -2 hoch Integer.MAX_VALUE(exklusiv) und 2 hoch Integer.MAX_VALUE (exklusiv) 
 	-> (-2^Integer.MAX_VALUE, 2^Integer.MAX_VALUE)
 	
-	Für BigDecimal in der Beschreibung keinen Wertebereich gefunden
+	Dezimalzahlen in der Range [Integer.MIN_VALUE*10^-Integer.MIN_VALUE, Integer.MAX_VALUE*10^-Integer.MIN_VALUE]
 
 Wodurch unterscheiden sich die Klassen?
 	BigInteger kann SEHR große Ganzzahlen darstellen, BigDecimal große Fließkommazahlen in 
