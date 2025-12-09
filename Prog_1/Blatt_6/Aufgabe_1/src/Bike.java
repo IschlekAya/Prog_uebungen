@@ -9,7 +9,7 @@ abstract public class Bike {
     private boolean electric;
     private String name;
 
-    public Bike(Frame frame0, Brake brake0, Gear gear0, Wheels wheels0, boolean electric0, String name0){
+    protected Bike(Frame frame0, Brake brake0, Gear gear0, Wheels wheels0, boolean electric0, String name0){
         frame = frame0;
         brake = brake0;
         gear = gear0;
