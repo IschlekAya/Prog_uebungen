@@ -8,7 +8,7 @@ Welche statischen Attribute besitzt diese Klasse?
 bitCount(int i)
 	returns the number of one-bits in the two's complement binary representation of the specified 
 	int value (1110 would be 3)
-	Usecase: 
+	Usecase: parity for TCP
 
 rotateLeft(int i, int distance)
 	returns the resulting int value when rotating the specified int value lef by {distance} amount of bits
