@@ -2,8 +2,7 @@ Welche Zahlenwerte lassen sich mittels dieser beiden Klassen repräsentieren?
 	Ganze Zahlen in der Range -2 hoch Integer.MAX_VALUE(exklusiv) und 2 hoch Integer.MAX_VALUE (exklusiv) 
 	-> (-2^Integer.MAX_VALUE, 2^Integer.MAX_VALUE)
 	
-	Fließkommazahlen in der groben Range von -1*10^308 bis 10^308 (nicht in der Dokumentation 
-	gefunden, durch Ausprobieren abgeschätzt)
+	Für BigDecimal in der Beschreibung keinen Wertebereich gefunden
 
 Wodurch unterscheiden sich die Klassen?
 	BigInteger kann SEHR große Ganzzahlen darstellen, BigDecimal große Fließkommazahlen in 

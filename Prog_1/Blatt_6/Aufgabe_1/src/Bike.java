@@ -152,14 +152,14 @@ abstract public class Bike {
 
     // retun wheels object with wanted specifications for size, width and brand
     public static Wheels askGetWheels(){
-        float radius = 0.0F;
+        float diameter = 0.0F;
         float width = 0.0F;
         String brand = "";
         // get radius
         do {
-            System.out.print("Geben sie den erwünschten Radius ihrer Räder in cm an\n> ");
-            radius = scanner.nextFloat();
-        } while(radius < 0.0);
+            System.out.print("Geben sie den erwünschten Durchmesser ihrer Räder in cm an\n> ");
+            diameter = scanner.nextFloat();
+        } while(diameter < 0.0);
         // get width
         do {
             System.out.print("Geben sie die erwünschte Breite ihrer Räder in mm an\n> ");
@@ -169,7 +169,7 @@ abstract public class Bike {
         System.out.print("Geben sie die erwünschte Marke ihrer Räder an\n> ");
         brand = scanner.next();
 
-        return new Wheels(radius, width, brand);
+        return new Wheels(diameter, width, brand);
     }
 
     // return String of the wanted Color
@@ -260,7 +260,7 @@ abstract public class Bike {
         System.out.println("Frame: " + frame.getName() + ", brand: " + frame.getBrand() +", color: " + frame.getColor());
         System.out.println("Brake: " + brake.getName() + ", brand: " + brake.getBrand());
         System.out.println("Gear: " + gear.getName() + ", brand: " + gear.getBrand());
-        System.out.printf("Wheels: Radius = %fcm, Width = %fmm, brand = %s\n", wheels.getRadius(), wheels.getWidth(), wheels.getBrand());
+        System.out.printf("Wheels: Diameter = %fcm, Width = %fmm, brand = %s\n", wheels.getDiameter(), wheels.getWidth(), wheels.getBrand());
         System.out.println("Electric: " + this.electric);
         System.out.println("-".repeat(75) + "\n");
     }
