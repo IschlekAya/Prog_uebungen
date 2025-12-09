@@ -3,8 +3,8 @@ public class Wheels {
     private float width;
     private String brand;
 
-    public Wheels(float radius0, float width0, String brand0){
-        diameter = radius0;
+    public Wheels(float diameter0, float width0, String brand0){
+        diameter = diameter0;
         width = width0;
         brand = brand0;
     }
