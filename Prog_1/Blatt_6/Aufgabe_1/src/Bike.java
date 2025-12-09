@@ -215,7 +215,7 @@ abstract public class Bike {
     public static Bike createBike() {
         // gets bikeType in form of a String, checks for potential errors
         String bikeType = askBikeType();
-        Boolean electricBike = askGetElectric(bikeType);
+        boolean electricBike = askGetElectric(bikeType);
 
         Frame frame = getFrame(askFrameType(), askGetColor());
         Brake brake = getBrake(askBrakeType());
