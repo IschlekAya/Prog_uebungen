@@ -12,8 +12,7 @@ bitCount(int i)
 
 rotateLeft(int i, int distance)
 	returns the resulting int value when rotating the specified int value lef by {distance} amount of bits
-	(overflowing bits DO NOT get shifted to the lower-value bits, those get filled up with zeros instead)
-	Usecase: Multiplying by multiples of two with minimal use of ressources, danger: intOverflow
+	Usecase:
 
 numberOfTrailingZeros(int i)
 	returns the number of zero bits following the lowest-order one-bit in the two's complement binary 
