@@ -1,0 +1,18 @@
+Wie werden bei generischen Datentypen die Typparameter dokumentiert?
+	@param parameter-name description
+	in der Beschreibung:
+		{@code type}, type = Typparameter
+		Beispiel: {code <Vector2D>} -> <Vector2D>
+	
+
+Welche Angaben sollten gemacht werden bei der Dokumentation von
+	Klassen:
+		@param -> Beschreibung der Typparameter
+	Methoden:
+		@param -> Beschreibung der Methodenparameter
+		@return -> Beschreibung des zurückgegebenen Typs und evtl. dessen range(s. Comparable)
+		@throws/@exception -> optional - beschreibt die Ausnahme, welche von einer Methode 
+			geworfen wird
+		{@inheritDoc} -> kopiert die Dokumentation der nächsthöheren Klasse o. Interface
+	Attributen:
+		{@value} -> gibt den Wert eines statischen Attributes zurück		-falsch?
