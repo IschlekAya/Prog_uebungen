@@ -1,4 +1,4 @@
-public class Test {
+public class ArrayStackTest {
     public static void main(String[] args) {
         stringTest();
         integerTest();
