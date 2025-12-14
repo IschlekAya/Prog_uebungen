@@ -1,12 +1,12 @@
-import java.util.Spliterator;
+import java.util.Iterator;
 import java.util.function.Consumer;
 
 public class ListStack<E> implements Stack<E>, Iterable<E> {
 
-    private class ListCell<F>{
+    public class ListCell<F>{
         final private F content;
-        final private ListCell<F> next;
-        final private ListCell<F> previous;
+        private ListCell<F> next;
+        private ListCell<F> previous;
 
         protected ListCell(F content0, ListCell<F> next0, ListCell<F> previous0) {
             this.content = content0;
@@ -15,13 +15,14 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
         }
     }
 
-    private class Iterator<G>{
+    private class ListStackIterator<G> implements Iterator<G> {
         private ListCell<G> cursor;
 
-        protected Iterator(ListCell<G> cursor0){this.cursor = cursor0;}
+        protected ListStackIterator(ListCell<G> cursor0){this.cursor = cursor0;}
 
         public boolean hasNext() {return cursor.next != null;}
-        public ListCell<G> next() {return cursor.next;}
+        public G next() {return cursor.next.content;}
+        public void remove() {cursor.previous.next = null;}
     }
 
     private ListCell<E> head;
@@ -36,13 +37,13 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
 
     @Override
     public void push(E element){
-        if (isEmpty()){
+        if (isEmpty()) {
             head = new ListCell<E>(element, null, null);
             tail = head;
-            size++;
-            return;
+        } else {
+            tail.next = new ListCell<E>(element, null, tail);
+            tail = tail.next;
         }
-        tail = new ListCell<E>(element, null, tail);
         size++;
     }
 
@@ -51,6 +52,7 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
         if (isEmpty()) return null;
         E top = top();
         tail = tail.previous;
+        tail.next = null;
         size--;
         return top;
     }
@@ -67,10 +69,9 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
     @Override
     public int size(){return size;}
 
-    // TODO: wtf?!
     @Override
     public Iterator<E> iterator() {
-        return new Iterator<E>(head);
+        return new ListStackIterator<E>(head);
     }
 
     @Override
@@ -79,7 +80,15 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
     }
 
     @Override
-    public Spliterator<E> spliterator() {
-        return Iterable.super.spliterator();
+    public String toString(){
+        if (isEmpty()) return "[]";
+        ListCell<E> currentCell = head;
+        String s = "[";
+        while (currentCell.next != null){
+            s += currentCell.content + ", ";
+            currentCell = currentCell.next;
+        }
+        s += currentCell.content + "]";
+        return s;
     }
 }
