@@ -21,7 +21,7 @@ public class ListStack<E> implements Stack<E>, Iterable<E> {
         protected ListStackIterator(ListCell<G> cursor0){this.cursor = cursor0;}
 
         public boolean hasNext() {return cursor.next != null;}
-        public G next() {return cursor.next.content;}
+        public G next() {cursor = cursor.next; return cursor.content;}
         public void remove() {cursor.previous.next = null;}
     }
 

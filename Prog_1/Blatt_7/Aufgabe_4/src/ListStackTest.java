@@ -13,7 +13,7 @@ public class ListStackTest {
         // Seems to apply the method to every String in ListStack instead of every ListCell<String> in ListStack
         // I don't know anymore
         // Send help
-//        lSS.forEach(str -> System.out.println(str));
+        lSS.forEach(str -> System.out.println(str));
     }
 
 }
