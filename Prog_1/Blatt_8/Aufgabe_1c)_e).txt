@@ -1,0 +1,8 @@
+Gibt es eine Grenze für n, oberhalb derer die rekursive Version mich Cache nicht mehr richtig arbeitet?
+Was geschieht in solch einem Fall?
+	In der Konsole ab dem ~3640-ten Element aus der Fibonacci-Folge erzeugt die Cache-Version einen Stackoverflow
+	In IntelliJ ab dem ~9715-ten Element aus der Fibonacci-Folge erzeugt die Cache-Version einen Stackoverflow
+
+Stack-Speicher in der JVM erhöhen:
+	java -Xss[Stackgröße, z.B. 2m für 2 megabytes] [.class-Datei]
+	java -Xss2m FibonacciBigIntegerCached 15000
