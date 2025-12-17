@@ -1,5 +1,5 @@
 import java.math.BigInteger;
-import java.util.Scanner;
+
 /**
  * Reads an Integer i from the console and calculates the Fibonacci-number after i Iterations{@literal .}
  * Prints the solution to the console{@literal .}
