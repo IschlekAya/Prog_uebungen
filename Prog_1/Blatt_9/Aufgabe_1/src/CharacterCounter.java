@@ -32,7 +32,7 @@ public class CharacterCounter {
      * @param content String to generate a {@link Counter} for
      * @return {@link Counter} object
      */
-    public Counter count(String content){
+    public Counter count(String content) throws StringIndexOutOfBoundsException{
         Counter counterObject = new Counter();
 
         // determine character count
@@ -51,7 +51,7 @@ public class CharacterCounter {
         return counterObject;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         // double startTime = System.nanoTime();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
@@ -64,10 +64,17 @@ public class CharacterCounter {
         } catch (IOException e){
             System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
             return;
-        }
+        } // never null as defined by initialization
 
-        System.out.println(fileContent + "\n");
-        System.out.println(necessary.count(fileContent));
+        System.out.println(fileContent + "\n"); // it's funny
+
+        try {
+            System.out.println(necessary.count(fileContent));
+        } catch (StringIndexOutOfBoundsException e){
+            System.out.println("the fie's not allowed to be empty");
+        } catch(NullPointerException e){
+            System.out.println("How did you get a NullPointerException all the way here?");
+        }
         // double timeInMs = (System.nanoTime()-startTime)/1000000.0;
         // System.out.printf("time: %.3fms\n", timeInMs);
     }
