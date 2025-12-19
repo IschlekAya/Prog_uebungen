@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +10,8 @@ public class CharacterCounter {
      * Requires a String containing the location of the wanted file on the hard drive
      * @param fileName Path to the file
      * @return Contents of the file as String, lines separated by \n
-     * @throws IOException honestly your fault if this occurs
+     * @throws IOException if an I/O occurs
+     * @throws FileNotFoundException {@link FileReader}
      */
     public String readFileContent(String fileName) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(fileName));
@@ -35,6 +37,8 @@ public class CharacterCounter {
 
         // determine character count
         counterObject.setCharacterCount(content.length());
+        if (content.charAt(0) == 10) counterObject.increaseCharacterCount(-1); // cant get rid of char 10 (newline) at the start of the string, no, replace and replaceAll("\n", "") do not work, only appears in Strings built from file contents
+
 
         // determine row count
         int index = 0;
@@ -48,17 +52,20 @@ public class CharacterCounter {
     }
 
     public static void main(String[] args) {
-
-        CharacterCounter necessary = new CharacterCounter();    // why not static?
+        CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
-        try {
-            fileContent = necessary.readFileContent("args[0]");
-        } catch (IOException e){
-            System.out.println("Oops! That IOExpection nearly hit you in the face!\nHere, good thing I caught it for you!");
-        }
-        if (fileContent.equals("Oh no an error!")) return;
 
-        System.out.println(fileContent);
+        try {
+            fileContent = necessary.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
+        } catch (FileNotFoundException e){
+            System.out.println("Your file does not exist. Wrong file path perhaps?");
+            return;
+        } catch (IOException e){
+            System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
+            return;
+        }
+
+        System.out.println(fileContent + "\n");
         System.out.println(necessary.count(fileContent));
     }
 }
