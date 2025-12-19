@@ -52,6 +52,7 @@ public class CharacterCounter {
     }
 
     public static void main(String[] args) {
+        // double startTime = System.nanoTime();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
 
@@ -67,5 +68,7 @@ public class CharacterCounter {
 
         System.out.println(fileContent + "\n");
         System.out.println(necessary.count(fileContent));
+        // double timeInMs = (System.nanoTime()-startTime)/1000000.0;
+        // System.out.printf("time: %.3fms\n", timeInMs);
     }
 }
