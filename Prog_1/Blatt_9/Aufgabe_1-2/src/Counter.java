@@ -1,7 +1,7 @@
 /**
  * Object that stores three int variables {@link #rowCount}, {@link #wordCount} and {@link #characterCount} with respective getter/setter and an increase(by int x) method
  */
-public class Counter {
+public class Counter{
     private int rowCount;
     private int wordCount;
     private int characterCount;
@@ -10,6 +10,12 @@ public class Counter {
         rowCount = 0;
         wordCount = 0;
         characterCount = 0;
+    }
+
+    public Counter(int rowCount, int wordCount, int characterCount) {
+        this.rowCount = rowCount;
+        this.wordCount = wordCount;
+        this.characterCount = characterCount;
     }
 
     public int getRowCount() {return rowCount;}
@@ -39,5 +45,11 @@ public class Counter {
     @Override
     public String toString(){
         return "Row Count: " + this.rowCount + "\nWord count: " + this.wordCount + "\nCharacter Count: "  + this.characterCount;
+    }
+
+    public boolean equals(Counter c){
+        if (this.rowCount != c.rowCount) return false;
+        if (this.wordCount != c.wordCount) return false;
+        return (this.characterCount == c.characterCount);
     }
 }

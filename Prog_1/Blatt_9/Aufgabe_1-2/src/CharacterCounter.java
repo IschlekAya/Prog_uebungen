@@ -11,11 +11,11 @@ public class CharacterCounter {
      * @param fileName Path to the file
      * @return Contents of the file as String, lines separated by \n
      * @throws IOException if an I/O occurs
-     * @throws FileNotFoundException {@link FileReader}
+     * @throws FileNotFoundException see {@link FileReader}
      */
     public String readFileContent(String fileName) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(fileName));
-        StringBuilder content = new StringBuilder("");
+        StringBuilder content = new StringBuilder();
         String addition = buffRead.readLine();
 
         while (addition != null) {
@@ -32,13 +32,8 @@ public class CharacterCounter {
      * @param content String to generate a {@link Counter} for
      * @return {@link Counter} object
      */
-    public Counter count(String content) throws StringIndexOutOfBoundsException{
+    public Counter count(String content) throws StringIndexOutOfBoundsException, NullPointerException{
         Counter counterObject = new Counter();
-
-        // determine character count
-        counterObject.setCharacterCount(content.length());
-        if (content.charAt(0) == 10) counterObject.increaseCharacterCount(-1); // cant get rid of char 10 (newline) at the start of the string, no, replace and replaceAll("\n", "") do not work, only appears in Strings built from file contents
-
 
         // determine row count
         int index = 0;
@@ -48,19 +43,20 @@ public class CharacterCounter {
         String[] words = content.replaceAll("\n", " ").split(" ");
         for (String word : words) if(!word.isEmpty()) counterObject.increaseWordCount(1);   // else would include an "" left from replacing the leading \n
 
+        // determine character count
+        counterObject.setCharacterCount(content.length());
+        if (content.charAt(0) == 10) counterObject.increaseCharacterCount(-1); // cant get rid of char 10 (newline) at the start of the string, no, replace and replaceAll("\n", "") do not work, appears in Strings created with StringBuilder
+
         return counterObject;
     }
 
     public static void main(String[] args){
-        // double startTime = System.nanoTime();
+//        double startTime = System.nanoTime();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
 
         try {
             fileContent = necessary.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
-        } catch (FileNotFoundException e){
-            System.out.println("Your file does not exist. Wrong file path perhaps?");
-            return;
         } catch (IOException e){
             System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
             return;
@@ -71,11 +67,11 @@ public class CharacterCounter {
         try {
             System.out.println(necessary.count(fileContent));
         } catch (StringIndexOutOfBoundsException e){
-            System.out.println("the fie's not allowed to be empty");
+            System.out.println("the file's not allowed to be empty");
         } catch(NullPointerException e){
             System.out.println("How did you get a NullPointerException all the way here?");
         }
-        // double timeInMs = (System.nanoTime()-startTime)/1000000.0;
-        // System.out.printf("time: %.3fms\n", timeInMs);
+//        double timeInMs = (System.nanoTime()-startTime)/1000000.0;
+//        System.out.printf("time: %.3fms\n", timeInMs);
     }
 }
