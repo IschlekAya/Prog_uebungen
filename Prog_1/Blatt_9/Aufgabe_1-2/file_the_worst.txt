@@ -1,0 +1,2 @@
+Yeah no, this is just a boring file to test the functionality of CharacterCounter.java.
+But where is the fun in that??
