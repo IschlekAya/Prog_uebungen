@@ -59,6 +59,7 @@ public class CharacterCounter {
             fileContent = necessary.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
         } catch (IOException e){
             System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
+            System.out.println("Your filepath was: /home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
             return;
         } // never null as defined by initialization
 

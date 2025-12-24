@@ -5,7 +5,7 @@ import org.opentest4j.AssertionFailedError;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class CharacterCounterCountTest{
+public class CharacterCounterTest {
 
     public static void main(String[] args) {
         test_1(); // functionality readFileContent()

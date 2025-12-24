@@ -1,3 +1,2 @@
 Yeah no, this is just a boring file to test the functionality of CharacterCounter.java.
 But where is the fun in that??
-30 + 89 = 119 -> Word count is correct (was correct, great, now you went and ruined it!)
