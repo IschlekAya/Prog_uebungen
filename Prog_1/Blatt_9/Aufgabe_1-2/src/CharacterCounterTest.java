@@ -22,7 +22,7 @@ public class CharacterCounterTest {
         String content = "";
 
         try {
-            content = charCounter.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/file.txt");
+            content = charCounter.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1-2/file.txt");
         } catch (FileNotFoundException ex){
             System.out.println("caught a FileNotFoundException");
             return;
