@@ -51,15 +51,14 @@ public class CharacterCounter {
     }
 
     public static void main(String[] args){
-//        double startTime = System.nanoTime();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
 
         try {
-            fileContent = necessary.readFileContent("/home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
+            fileContent = necessary.readFileContent(args[0]);
         } catch (IOException e){
             System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
-            System.out.println("Your filepath was: /home/peter/Schreibtisch/HKA/Semester_1/Programmieren/Übungen/Prog_1/Blatt_9/Aufgabe_1/" + args[0]);
+            System.out.println("Your filepath was: " + args[0]);
             return;
         } // never null as defined by initialization
 
@@ -72,7 +71,5 @@ public class CharacterCounter {
         } catch(NullPointerException e){
             System.out.println("How did you get a NullPointerException all the way here?");
         }
-//        double timeInMs = (System.nanoTime()-startTime)/1000000.0;
-//        System.out.printf("time: %.3fms\n", timeInMs);
     }
 }
