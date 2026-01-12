@@ -46,6 +46,7 @@ public class FibonacciBigInteger {
     }
 
     public static void main(String[] args) {
-        System.out.println(fibonacciIter(Integer.parseInt(args[0])));
+        System.out.println("Iterative: " + fibonacciIter(Integer.parseInt(args[0])) +
+                "\nRecursive: " + fibonacciRec(Integer.parseInt(args[0])));
     }
 }

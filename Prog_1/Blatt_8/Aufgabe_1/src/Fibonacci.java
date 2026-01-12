@@ -1,7 +1,7 @@
 /**
  * Reads an Integer i from the console and calculates the Fibonacci-number after i Iterations{@literal .}
  * Prints the solution to the console{@literal .}
- * Note: Only accurate up to and including the 48th Fibonacci-number
+ * Note: Only accurate up to and including the 46th Fibonacci-number
  */
 public class Fibonacci {
     /**

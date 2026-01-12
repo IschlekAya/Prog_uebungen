@@ -18,10 +18,8 @@ public class FibonacciBigIntegerCached {
         BigInteger c = BigInteger.valueOf(0);
         for (int i = 0; i < n; i++){
             c = a.add(b);
-//            System.out.printf("%d + %d = %d\n", a, b, c);
             a = b;
             b = c;
-//            System.out.printf("new a = %d, new b = %d\n", a, b);
         }
 
         long iterEndTime = System.nanoTime();
@@ -62,19 +60,18 @@ public class FibonacciBigIntegerCached {
     private static BigInteger fibonacciRec(BigInteger[] cache, int currentCount){
         // default condition, already reached the n-th Fibonacci-number, return said number
         if (cache.length == currentCount){
-            // for (BigInteger x : cache) System.out.println(x);
             return cache[currentCount-1];
         }
         // cache doesnt contain two previous Fibonacci-numbers -> but we know Fibonacci-number one and two are 1
         if (currentCount < 2) {cache[currentCount] = BigInteger.valueOf(1);}
-        // Fibonacci-number n = Fibonacci-number n-2 + Fibonacci-number n-1
+
         else {cache[currentCount] = cache[currentCount -2 ].add(cache[currentCount -1]);}
         return fibonacciRec(cache, currentCount +1);
     }
 
     public static void main(String[] args) {
         int fibonacciSequenceIndex = (Integer.parseInt(args[0])); // 9715;
-        System.out.println(fibonacciIter(fibonacciSequenceIndex));
-        System.out.println(fibonacciRec(fibonacciSequenceIndex));
+        System.out.println("Iterative: " + fibonacciIter(fibonacciSequenceIndex) +
+                "\n\nRecursive: " + fibonacciRec(fibonacciSequenceIndex));
     }
 }

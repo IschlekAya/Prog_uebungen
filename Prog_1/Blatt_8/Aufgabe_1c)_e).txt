@@ -1,3 +1,6 @@
+Bis zu welcher Zahl n erhalten Sie korrekte Ergebnisse?
+	Ab und inklusiv der Zahl n = 47 kommt es zu einem IntegerOverflow
+
 Gibt es eine Grenze für n, oberhalb derer die rekursive Version mich Cache nicht mehr richtig arbeitet?
 Was geschieht in solch einem Fall?
 	In der Konsole ab dem ~3640-ten Element aus der Fibonacci-Folge erzeugt die Cache-Version einen Stackoverflow
