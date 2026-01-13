@@ -1,5 +1,4 @@
 import java.math.BigInteger;
-import java.util.Scanner;
 
 /**
  * Reads an Integer i from the console and calculates the Fibonacci-number after i Iterations{@literal .}
@@ -36,18 +35,19 @@ public class FibonacciBigIntegerCached {
      * @return Fibonacci-number after n iterations as BigInteger
      */
     public static BigInteger fibonacciRec(int n){
-        if (n <= 0) return BigInteger.valueOf(0);
+        if (n > 0){
+            long recStartTime = System.nanoTime();
 
-        long recStartTime = System.nanoTime();
+            BigInteger[] cache = new BigInteger[n];
+            BigInteger solution =  fibonacciRec(cache, 0);
 
-        BigInteger[] cache = new BigInteger[n];
-        BigInteger solution =  fibonacciRec(cache, n-1);    // from here on out n is treated as index, meaning it starts at 0 -> subtract one to ensure correct result
+            long recEndTime = System.nanoTime();
+            double timeInMilliseconds = (recEndTime-recStartTime)/1000000.0;
+            System.out.printf("fibonacciRec took %.3f milliseconds to complete\n", timeInMilliseconds);
 
-        long recEndTime = System.nanoTime();
-        double timeInMilliseconds = (recEndTime-recStartTime)/1000000.0;
-        System.out.printf("fibonacciRec took %.3f milliseconds to complete\n", timeInMilliseconds);
-
-        return solution;
+            return solution;
+        }
+        return BigInteger.valueOf(0);
     }
 
     /**
@@ -57,21 +57,21 @@ public class FibonacciBigIntegerCached {
      * @param cache Cache containing all already calculated Fibonacci-numbers, its capacity representing the searched n-th Fibonacci-number
      * @return Itself if the cache isn't full, else the last entry of the cache
      */
-    private static BigInteger fibonacciRec(BigInteger[] cache, int n){
-        if (cache[n] == null) {
-            if (n <= 1) cache[n] = BigInteger.valueOf(1);
-            else cache[n] = fibonacciRec(cache, n-1).add(fibonacciRec(cache, n-2));
+    private static BigInteger fibonacciRec(BigInteger[] cache, int currentCount){
+        // default condition, already reached the n-th Fibonacci-number, return said number
+        if (cache.length == currentCount){
+            return cache[currentCount-1];
         }
-        return cache[n];
+        // cache doesnt contain two previous Fibonacci-numbers -> but we know Fibonacci-number one and two are 1
+        if (currentCount < 2) {cache[currentCount] = BigInteger.valueOf(1);}
+
+        else {cache[currentCount] = cache[currentCount -2 ].add(cache[currentCount -1]);}
+        return fibonacciRec(cache, currentCount +1);
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a positive Integer\n> ");
-        int input = scanner.nextInt();
-
-        System.out.println("Iterative: " + fibonacciIter(input));
-        System.out.println("Recursive: " + fibonacciRec(input));
-        scanner.close();
+        int fibonacciSequenceIndex = (Integer.parseInt(args[0])); // 9715;
+        System.out.println("Iterative: " + fibonacciIter(fibonacciSequenceIndex) +
+                "\n\nRecursive: " + fibonacciRec(fibonacciSequenceIndex));
     }
 }
