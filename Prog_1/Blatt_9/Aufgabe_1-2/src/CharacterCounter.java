@@ -2,6 +2,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class CharacterCounter {
 
@@ -51,14 +52,17 @@ public class CharacterCounter {
     }
 
     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your filepath: ");
+        String filepath = sc.next();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
 
         try {
-            fileContent = necessary.readFileContent(args[0]);
+            fileContent = necessary.readFileContent(filepath);
         } catch (IOException e){
             System.out.println("Oops! That IOException nearly hit you in the face!\nHere, good thing I caught it for you!");
-            System.out.println("Your filepath was: " + args[0]);
+            System.out.println("Your filepath was: " + filepath);
             return;
         } // never null as defined by initialization
 

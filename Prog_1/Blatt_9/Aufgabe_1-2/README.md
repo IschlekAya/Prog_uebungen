@@ -1,5 +1,5 @@
-###When using the Test class:###
-    It is necessary to have the file file.txt with the following content:
+When using the Test class:
+It is necessary to have the file file.txt with the following content:
 """
                     
 "Who’s joe?" a distant voice asks.
@@ -9,5 +9,4 @@ The earth itself seemed to cry out in agony, until finally the ground itself spl
 The man cried out in pain as he disintegrated into dust, and the whole world fell silent in fear.
 "I did a little trolling." the wretched creature remarked before burrowing back into the earth."""
 
-    and to manually insert the correct file path in test_1() inside CharacterCounterTest.java
-
+and to manually insert the correct file path in test_1() inside CharacterCounterTest.java
