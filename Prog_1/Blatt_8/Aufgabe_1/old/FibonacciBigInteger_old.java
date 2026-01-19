@@ -1,6 +1,4 @@
 import java.math.BigInteger;
-import java.util.Scanner;
-
 /**
  * Reads an Integer i from the console and calculates the Fibonacci-number after i Iterations{@literal .}
  * Prints the solution to the console{@literal .}
@@ -15,11 +13,12 @@ public class FibonacciBigInteger {
         BigInteger a = BigInteger.valueOf(1);
         BigInteger b = BigInteger.valueOf(0);
         BigInteger c = BigInteger.valueOf(0);
-        // 1 + 0 = 1 -> 0 + 1 = 1 -> 1 + 1 = 2 -> ... here a + b = c
         for (int i = 0; i < n; i++){
             c = a.add(b);
+//            System.out.printf("%d + %d = %d\n", a, b, c);
             a = b;
             b = c;
+//            System.out.printf("new a = %d, new b = %d\n", a, b);
         }
         return c;
     }
@@ -30,19 +29,24 @@ public class FibonacciBigInteger {
      * @return Fibonacci-number after n iterations as BigInteger
      */
     public static BigInteger fibonacciRec(int n){
-        if (n == 1 || n == 2) return BigInteger.valueOf(1);
-        else if (n == 0) return BigInteger.valueOf(0);
+        if (n > 0) return fibonacciRec(n, BigInteger.valueOf(1), BigInteger.valueOf(0));
+        return BigInteger.valueOf(0);
+    }
 
-        return fibonacciRec(n-1).add(fibonacciRec(n-2));
+    /**
+     * Coming from a fibonacci number, calculates the Fibonacci-number following after n-more iterations using a recursive function
+     * @param n Amount of iterations to follow
+     * @param a one part of the previous Fibonacci-number
+     * @param b other part of the previous Fibonacci-number
+     * @return Fibonacci-number after n more iterations as BigInteger
+     */
+    private static BigInteger fibonacciRec(int n, BigInteger a, BigInteger b){
+        if (n == 1) return a.add(b);
+        return  fibonacciRec((n-1), b, a.add(b));
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a positive Integer\n> ");
-        int input = scanner.nextInt();
-
-        System.out.println("Iterative: " + fibonacciIter(input));
-        System.out.println("Recursive: " + fibonacciRec(input));
-        scanner.close();
+        System.out.println("Iterative: " + fibonacciIter(20_000) +
+                "\nRecursive: " + fibonacciRec(20_000));
     }
 }
