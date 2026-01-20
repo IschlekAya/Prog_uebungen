@@ -52,9 +52,9 @@ public class CharacterCounter {
     }
 
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your filepath: ");
-        String filepath = sc.next();
+        String filepath = scanner.next();
         CharacterCounter necessary = new CharacterCounter();// why not static?
         String fileContent = "Oh no an error!";
 
@@ -75,5 +75,7 @@ public class CharacterCounter {
         } catch(NullPointerException e){
             System.out.println("How did you get a NullPointerException all the way here?");
         }
+
+	scanner.close();
     }
 }
